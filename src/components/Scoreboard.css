@@ -1,0 +1,53 @@
+.scoreboard {
+  position: fixed;
+  right: var(--page-padding);
+  bottom: 32px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(10, 31, 20, 0.88);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.scoreboard__point {
+  position: relative;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: #6f8f7c;
+  transition: color 0.25s ease;
+}
+.scoreboard__point.is-active {
+  color: var(--color-court);
+  font-weight: 700;
+}
+
+.scoreboard__pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: var(--color-ball);
+}
+
+.scoreboard__text {
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .scoreboard {
+    bottom: 16px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  .scoreboard__point {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,51 @@
+/* =====================================================================
+   TEMA — CORES E FONTES DO SITE
+   Troque os valores abaixo para mudar a cara do site inteiro.
+   (As fontes são carregadas no arquivo index.html, pelo Google Fonts.)
+   ===================================================================== */
+
+:root {
+  /* ---- Cores ---- */
+  --color-court: #0e2a1c;        /* verde da quadra (fundo escuro principal) */
+  --color-court-deep: #0a1f14;   /* verde mais escuro (placar, detalhes) */
+  --color-surface: #17402b;      /* verde de superfície (números grandes, cartões) */
+  --color-input: #133624;        /* fundo dos campos do formulário */
+  --color-line: #2a5a40;         /* linhas finas sobre o verde */
+  --color-ball: #d9f24b;         /* amarelo bolinha (destaque) */
+  --color-chalk: #f3f1e7;        /* branco giz (fundo claro e texto no escuro) */
+  --color-chalk-line: #cfcab6;   /* linhas finas sobre o fundo claro */
+  --color-chalk-ghost: #e6e2d2;  /* números gigantes no fundo claro */
+  --color-clay: #e2803a;         /* laranja saibro (detalhe pequeno) */
+  --color-moss: #2e6b48;         /* verde médio (títulos em destaque no claro) */
+  --color-muted-dark: #93ae9e;   /* texto secundário no fundo escuro */
+  --color-muted-light: #3d5446;  /* texto secundário no fundo claro */
+  --color-placeholder: #86a391;  /* texto de exemplo nos campos */
+
+  /* ---- Fontes ----
+     As fontes vêm instaladas no projeto (pacotes @fontsource, importados
+     em src/main.jsx). Para trocar: instale outra fonte do fontsource.org
+     e mude o nome aqui e o import no main.jsx. */
+  --font-display: "Instrument Serif", Georgia, serif;               /* títulos */
+  --font-body: "Inter Tight Variable", system-ui, sans-serif;       /* textos */
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;  /* rótulos */
+
+  /* ---- Medidas ---- */
+  --page-padding: 64px;   /* margem lateral */
+  --section-space: 140px; /* espaço em cima e embaixo das seções */
+  --max-width: 1440px;
+  --radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --page-padding: 40px;
+    --section-space: 104px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-padding: 20px;
+    --section-space: 80px;
+  }
+}

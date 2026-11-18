@@ -1,0 +1,186 @@
+/* Estilos básicos usados no site todo */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-court);
+  color: var(--color-chalk);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* Contorno visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 2px solid var(--color-ball);
+  outline-offset: 3px;
+}
+
+/* ---------- Peças reutilizadas ---------- */
+
+/* Largura padrão do conteúdo das seções */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
+.section {
+  position: relative;
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+  overflow: hidden;
+}
+
+.section--dark {
+  background: var(--color-court);
+  color: var(--color-chalk);
+}
+
+.section--light {
+  background: var(--color-chalk);
+  color: var(--color-court);
+}
+
+/* Rótulo pequeno em letras de máquina (ex.: "15 — QUEM TE ENSINA") */
+.label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.section--dark .label {
+  color: var(--color-ball);
+}
+.section--light .label {
+  color: var(--color-moss);
+}
+
+/* Títulos grandes com fonte serifada */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.display em {
+  font-style: italic;
+}
+.section--dark .display em {
+  color: var(--color-ball);
+}
+.section--light .display em {
+  color: var(--color-moss);
+}
+
+/* Botões em formato de pílula */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn--ball {
+  background: var(--color-ball);
+  color: var(--color-court);
+}
+.btn--court {
+  background: var(--color-court);
+  color: var(--color-ball);
+}
+.btn--outline-dark {
+  border: 1.5px solid var(--color-court);
+  color: var(--color-court);
+}
+.btn--outline-light {
+  border: 1.5px solid var(--color-chalk);
+  color: var(--color-chalk);
+}
+
+/* Número gigante "fantasma" no fundo das seções (15, 30, 40) */
+.ghost-number {
+  position: absolute;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 260px;
+  line-height: 240px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.section--light .ghost-number {
+  color: var(--color-chalk-ghost);
+}
+.section--dark .ghost-number {
+  color: var(--color-surface);
+}
+@media (max-width: 768px) {
+  .ghost-number {
+    font-size: 150px;
+    line-height: 140px;
+  }
+}
+
+/* Texto só para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Quem pediu menos movimento no sistema não vê animações */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
